@@ -1,9 +1,13 @@
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class StudentManagement {
-    ArrayList<Student> listStudent = new ArrayList<Student>();
+    // lam theo arrayList
+//    ArrayList<Student> listStudent = new ArrayList<Student>();
+//    Lam theo Linkerlist
+    LinkedList<Student> listStudent = new LinkedList<Student>();
 
     public void addStudent() {
         Scanner scanner = new Scanner(System.in);
@@ -39,7 +43,7 @@ public class StudentManagement {
         for (int i = 0; i < listStudent.size(); ++i) {
             if (listStudent.get(i).getId() == id) {
                 listStudent.remove(i);
-            }else{
+            } else {
                 System.out.println("trong danh sach khong co id sinh vien do");
             }
         }
@@ -74,7 +78,7 @@ public class StudentManagement {
                 System.out.println("email");
                 String email = scanner.nextLine();
                 listStudent.get(i).setEmail(email);
-            }else{
+            } else {
                 System.out.println("trong danhs sach khong co id sinh vien do");
             }
         }
@@ -84,7 +88,7 @@ public class StudentManagement {
         for (int i = 0; i < listStudent.size(); ++i) {
             if (listStudent.get(i).getId() == id) {
                 listStudent.get(i).disPlay();
-            }else{
+            } else {
                 System.out.println("trong danh sach khong co id do");
             }
         }
@@ -94,7 +98,7 @@ public class StudentManagement {
         for (int i = 0; i < listStudent.size(); ++i) {
             if (listStudent.get(i).getName() == name) {
                 listStudent.get(i).disPlay();
-            }else{
+            } else {
                 System.out.println("trong danh sach khong co ten do");
             }
 
@@ -103,23 +107,27 @@ public class StudentManagement {
 
     }
 
-    public void findScholarship(){
-        for(int i=0;i<listStudent.size();++i){
-            if(listStudent.get(i).isScholarship()){
+    public void findScholarship() {
+        for (int i = 0; i < listStudent.size(); ++i) {
+            if (listStudent.get(i).isScholarship()) {
                 listStudent.get(i).disPlay();
-            }else{
+            } else {
                 System.out.println("Khong co sinh vien nao duoc hoc bong");
             }
         }
     }
 
-    public void findWoman(){
-        for(int i=0;i<listStudent.size();++i){
-            if(listStudent.get(i).isMan()==false){
+    public void findWoman() {
+        for (int i = 0; i < listStudent.size(); ++i) {
+            if (listStudent.get(i).isMan() == false) {
                 listStudent.get(i).disPlay();
-            }else{
+            } else {
                 System.out.println("khong co sinh vien nu");
             }
         }
     }
+
+
+
+
 }
